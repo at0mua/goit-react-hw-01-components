@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Title from './components/Title/Title';
+import Profile from './components/Profile/Profile.js';
+import Statistics from './components/Statistics/Statistics';
+import FriendList from './components/FriendList/FriendList';
+import TransactionHistory from './components/TransactionHistory/TransactionHistory';
+import user from './components/Profile/user.json';
+import statisticalData from './components/Statistics/statistical-data.json';
+import friends from './components/FriendList/friends.json';
+import transactions from './components/TransactionHistory/transactions.json';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Title title="Задание 1 - Профиль социальной сети" />
+
+      <Profile
+        name={user.name}
+        tag={user.tag}
+        location={user.location}
+        avatar={user.avatar}
+        stats={user.stats}
+      />
+
+      <Title title="Задание 2 - Секция статистики" />
+
+      <Statistics title="Upload stats" stats={statisticalData} />
+
+      <Title title="Задание 3 - Список друзей" />
+
+      <FriendList friends={friends} />
+
+      <Title title="Задание 4 - История транзакций" />
+
+      <TransactionHistory items={transactions} />
+    </>
   );
 }
-
-export default App;

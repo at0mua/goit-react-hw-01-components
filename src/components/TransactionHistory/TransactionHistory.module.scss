@@ -1,0 +1,28 @@
+.transactionHistory {
+  width: 600px;
+  margin: 0 auto;
+  border-radius: 4px;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+th {
+  width: 200px;
+  text-transform: uppercase;
+  color: white;
+  background-color: rgb(19, 152, 192);
+  border: 1px solid blue;
+}
+
+tr:nth-child(2n) {
+  background-color: rgb(204, 202, 202);
+}
+
+td {
+  text-align: center;
+  width: 200px;
+  color: rgb(88, 87, 87);
+}
+
+.name::first-letter {
+  text-transform: uppercase;
+}
