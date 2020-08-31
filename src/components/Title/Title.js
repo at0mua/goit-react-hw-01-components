@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Title.module.scss';
+
+import s from './Title.module.scss';
 
 const Title = ({ title }) => {
-  return <h2 className={styles.title}>{title}</h2>;
+  return <h2 className={s.title}>{title}</h2>;
 };
 
 Title.defaulProps = {

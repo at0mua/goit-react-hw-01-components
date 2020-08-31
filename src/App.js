@@ -1,26 +1,22 @@
 import React from 'react';
+
 import Title from './components/Title/Title';
 import Profile from './components/Profile/Profile.js';
 import Statistics from './components/Statistics/Statistics';
 import FriendList from './components/FriendList/FriendList';
 import TransactionHistory from './components/TransactionHistory/TransactionHistory';
-import user from './components/Profile/user.json';
-import statisticalData from './components/Statistics/statistical-data.json';
-import friends from './components/FriendList/friends.json';
-import transactions from './components/TransactionHistory/transactions.json';
 
-export default function App() {
+import user from './data/user.json';
+import statisticalData from './data/statistical-data.json';
+import friends from './data/friends.json';
+import transactions from './data/transactions.json';
+
+const App = () => {
   return (
     <>
       <Title title="Задание 1 - Профиль социальной сети" />
 
-      <Profile
-        name={user.name}
-        tag={user.tag}
-        location={user.location}
-        avatar={user.avatar}
-        stats={user.stats}
-      />
+      <Profile {...user} />
 
       <Title title="Задание 2 - Секция статистики" />
 
@@ -35,4 +31,6 @@ export default function App() {
       <TransactionHistory items={transactions} />
     </>
   );
-}
+};
+
+export default App;
